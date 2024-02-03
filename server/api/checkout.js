@@ -21,8 +21,8 @@ async function createCheckoutSession(req, res) {
       mode: "payment",
       line_items,
       customer_email,
-      success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `http://localhost:3000/canceled`,
+      success_url: `https://stripebackend-p6nz.onrender.com/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://stripebackend-p6nz.onrender.com/canceled`,
       shipping_address_collection: { allowed_countries: ["US", "CA"] },
     })
     res.status(200).json({ sessionId: session.id })
